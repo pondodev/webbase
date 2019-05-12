@@ -10,4 +10,5 @@ RUN apt -y install apache2 apache2-utils
 EXPOSE 80
 CMD apachectl -D FOREGROUND
 
-COPY site/ /var/www/html
+ADD configs/apache2.conf /etc/apache2
+ADD configs/000-default.conf /etc/apache2/sites-available
