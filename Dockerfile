@@ -2,7 +2,7 @@ FROM debian
 
 # install useful utilities
 RUN apt update
-RUN apt -y install neovim nano
+RUN apt -y install neovim nano git
 
 # install server stuffs
 RUN apt -y install apache2 apache2-utils
