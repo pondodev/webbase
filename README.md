@@ -6,6 +6,8 @@ docker image for a quick start with a web server running apache 2, php, and mari
 * apache 2
 * php7 (coming soon)
 * mariadb (coming soon)
+* python 3
+  * pyserial
 
 ## usage
 make sure that you run `createvolume.sh` first! this will allocate persistant space in the container for you to store your site.
