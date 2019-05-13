@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    website:
+        build: ./website
+        volumes:
+            - ./website/html:/var/www/html
+        ports:
+            - 80:80
+
+    python:
+        build: ./python
+        volumes:
+            - ./python/volume:/vol

@@ -1,1 +1,1 @@
-docker stop webbase
+docker-compose down
