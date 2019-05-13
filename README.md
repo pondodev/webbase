@@ -3,7 +3,7 @@ docker image for a quick start with a web server running apache 2, php, and mari
 
 ## services
 
-###website
+### website
 * debian
 * apache 2
 * php7
