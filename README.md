@@ -28,7 +28,11 @@ you shouldn't need to access a shell within these containers usually, but if you
 hop into the mariadb container with `docker exec -it webbase_mariadb_1 bash` and use `mysql -u root -p` to get to the mariadb command line. the password for the root user is `rootpassword`, if you wish to change this then look in the `docker-compose.yml` file, it should be self explanatory where to change the password.
 
 ### website
-all website files are stored in `website/html`, drop your files in there if you wish for apache to serve them. within the website if you wish to access the db, use the location `http://mariadb` which will give you access to mariadb container's database.
+all website files are stored in `website/html`, drop your files in there if you wish for apache to serve them.
+
+within the website if you wish to access the db, use the location `http://mariadb` in place of where you might normally use `localhost` which will give you access to mariadb container's database.
 
 ### python
 all python files are run from `python/volume`, just make sure to name your main python script `main.py` otherwise docker won't run it. if you wish to store information in the database, for now i suggest making a RESTful API in something like flask. an example will be in the `app/api.py` file. then you will be able to access the JSON it serves through a GET request and work from there.
+
+if you wish to add more python pip packages to the image then simply add the package name to `requirements.txt` on a new line and restart the docker images with `./stop.sh` and `./run.sh`
