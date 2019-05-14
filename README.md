@@ -30,7 +30,7 @@ hop into the mariadb container with `docker exec -it webbase_mariadb_1 bash` and
 ### website
 all website files are stored in `website/html`, drop your files in there if you wish for apache to serve them.
 
-within the website if you wish to access the db, use the location `http://mariadb` in place of where you might normally use `localhost` which will give you access to mariadb container's database.
+within the website if you wish to access the db, use the location `mariadb` in place of where you might normally use `localhost` which will give you access to mariadb container's database.
 
 ### python
 all python files are run from `python/volume`, just make sure to name your main python script `main.py` otherwise docker won't run it. if you wish to store information in the database, for now i suggest making a RESTful API in something like flask. an example will be in the `app/api.py` file. then you will be able to access the JSON it serves through a GET request and work from there.
