@@ -48,6 +48,23 @@ inside of the `website/html` directory there is a file called `dbconnect.php` wh
 ```
 
 ### python
-all python files are run from `python/volume`, just make sure to name your main python script `main.py` otherwise docker won't run it. if you wish to store information in the database, for now i suggest making a RESTful API in something like flask. an example will be in the `app/api.py` file. then you will be able to access the JSON it serves through a GET request and work from there.
+all python files are run from `python/volume`, just make sure to name your main python script `main.py` otherwise docker won't run it. alternatively, you can access a shell within the container using `docker exec -it webbase_python_1 bash` and run the python scripts from there. if you wish to store information in the database there are two ways. i suggest making a RESTful API in something like flask if you don't need to store that information for extended periods. an example will be in the `app/api.py` file. then you will be able to access the JSON it serves through a GET request and work from there. alternatively, you can use mysql-connector like so:
+
+```python
+import mysql.connector
+
+conn = mysql.connector.connect(
+    host='mariadb',
+    user='root',
+    password='rootpassword',
+    database='your_db_name_here'
+)
+
+cursor = conn.cursor()
+query = 'SELECT * FROM table'
+cursor.execute(query)
+conn.commit()
+print(cursor.rowcount)
+```
 
 if you wish to add more python pip packages to the image then simply add the package name to `requirements.txt` on a new line and restart the docker images with `./stop.sh` and `./run.sh`

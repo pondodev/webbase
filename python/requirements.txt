@@ -1,3 +1,4 @@
 pyserial
 Flask
 Flask-RESTful
+mysql-connector
