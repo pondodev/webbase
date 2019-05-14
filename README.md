@@ -7,7 +7,6 @@ docker image for a quick start with a web server running apache 2, php, and mari
 * mariadb
 
 ### website
-* debian
 * apache 2
 * php7
 
