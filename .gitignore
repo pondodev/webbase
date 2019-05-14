@@ -1,0 +1,2 @@
+mariadb/volume/*
+!mariadb/volume/.placeholder
