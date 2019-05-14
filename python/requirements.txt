@@ -1,1 +1,3 @@
 pyserial
+Flask
+Flask-RESTful
